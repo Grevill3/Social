@@ -1,18 +1,19 @@
+'use client';
+
 import { Typography, Card, CardContent, Box, Button, CardHeader } from '@mui/material';
+import Link from 'next/link';
+import { UserList } from '../../presentation/users/components/UserList';
+import { useUsers } from '../../presentation/users/hooks/useUsers';
 
 export default function UsersPage() {
+  const { users, remove } = useUsers();
+  
 	return (
-		<Box>
-			<Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
-				<Typography variant="h4">Gerenciar Usuários</Typography>
-				<Button variant="contained" color="primary">Novo Usuário</Button>
-			</Box>
-			<Card>
-				<CardHeader title="Lista de Usuários" />
-				<CardContent>
-					Aqui vai a lista de usuários.
-				</CardContent>
-			</Card>
-		</Box>
-	);
+        <Box>
+            <Typography variant="h4">Gerenciamento de usuários</Typography>
+            <hr />
+            <Link href="/users/create">Criar Novo</Link>
+      		<UserList users={users} onDelete={remove} />
+        </Box>
+    );
 }

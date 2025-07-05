@@ -22,8 +22,8 @@ export class UserApiRepository implements IUserRepository {
         return res.data;
     }
 
-    async update(user: User): Promise<User> {
-        const res = await httpClient.put<User>(`/users/${user.id}`, user);
+    async update(id: string, data: Partial<Omit<User, 'id' | 'createdAt'>>): Promise<User> {
+        const res = await httpClient.patch<User>(`/users/${id}`, data);
         return res.data;
     }
 

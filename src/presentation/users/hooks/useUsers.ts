@@ -33,14 +33,14 @@ export function useUsers() {
         return getUserUC.execute(id);
     }
 
-    async function update(user: User) {
-        await updateUserUC.execute(user);
-        await fetchAll();
+    async function update(id: string, data: Partial<Omit<User, 'id' | 'createdAt'>>) {
+        const updated = await updateUserUC.execute(id, data);
+        setUsers(prev => prev.map(u => (u.id === id ? updated : u)));
     }
 
     async function remove(id: string) {
         await deleteUserUC.execute(id);
-        await fetchAll();
+        setUsers(prev => prev.filter(u => u.id !== id));
     }
 
     useEffect(() => { fetchAll(); }, []);

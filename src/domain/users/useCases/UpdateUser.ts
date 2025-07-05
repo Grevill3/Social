@@ -3,8 +3,9 @@ import { User } from '../entities/User';
 
 export class UpdateUser {
     constructor(private repo: IUserRepository) { }
-    async execute(user: User): Promise<User> {
+
+    async execute(id: string, data: Partial<Omit<User, 'id' | 'createdAt'>>): Promise<User> {
         // validações podem ser adicionadas aqui
-        return this.repo.update(user);
+        return this.repo.update(id, data);
     }
 }

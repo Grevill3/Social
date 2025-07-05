@@ -1,6 +1,6 @@
-import { Typography, Card, CardContent, Box, Button, CardHeader } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import Link from 'next/link';
-import { UserListClient } from '../../presentation/users/components/UserListClient';
+import { UserListClient } from '../../presentation/users/clients/UserListClient';
 
 export default function UsersPage() {
 	return (

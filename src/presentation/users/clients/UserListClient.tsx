@@ -1,6 +1,6 @@
 'use client';
 
-import { UserList } from './UserList';
+import { UserList } from '../components/UserList';
 import { useUsers } from '../hooks/useUsers';
 
 export function UserListClient() {

@@ -6,8 +6,7 @@ import {
     List,
     ListItemButton,
     ListItemIcon,
-    ListItemText,
-    Toolbar
+    ListItemText
 } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import PeopleIcon from '@mui/icons-material/People';

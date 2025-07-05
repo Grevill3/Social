@@ -1,37 +1,14 @@
-'use client';
-
 import { Typography, Box } from '@mui/material';
-import { useRouter, useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { UserForm } from '../../../../presentation/users/components/UserForm';
-import { useUsers } from '../../../../presentation/users/hooks/useUsers';
-import { User } from '../../../../domain/users/entities/User';
+import Link from 'next/link';
+import UserEditClient from '../../../../presentation/users/clients/UserEditClient';
 
 export default function UserEditPage() {
-    const { get, update } = useUsers();
-    const router = useRouter();
-    const params = useParams<{ id: string }>();
-    const [user, setUser] = useState<User | null>(null);
-
-    useEffect(() => {
-        if (params?.id) {
-            get(params.id).then(setUser);
-        }
-    }, [params?.id]);
-
-    if (!user) return <p>Carregando...</p>;
-
-    async function handleSubmit(data: { name: string; email: string }) {
-        // await update({ ...user, ...data });
-        console.log('VERIFICAR ERRO E ARRUMAR');
-        router.push('/');
-    }
-
     return (
         <Box>
-            <Typography variant="h4">Detalhes do usuário</Typography>
+            <Typography variant="h4">Editar usuário</Typography>
             <hr />
-            <UserForm initialValues={user} onSubmit={handleSubmit} submitLabel="Atualizar" />
+            <Link href="/users">Voltar</Link>
+            <UserEditClient />
         </Box>
     );
 }

@@ -26,8 +26,6 @@ export default function UserEditClient() {
 
 	return (
 		<Box>
-			<Typography variant="h4">Detalhes do usuário</Typography>
-			<hr />
 			<UserForm initialValues={user} onSubmit={handle} submitLabel="Atualizar" />
 		</Box>
 	);

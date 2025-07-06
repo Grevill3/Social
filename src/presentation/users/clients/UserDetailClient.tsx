@@ -20,9 +20,8 @@ export default function UserDetailClient() {
 
     return (
         <Box>
-            <Typography variant="h4">Detalhes do usuário</Typography>
-            <hr />
-            <h1>Detalhes de {user.name}</h1>
+            <p>Pensar em algo, talvez alguns cards para exibir detalhes do usuário</p>
+            <p>Email: {user.name}</p>
             <p>Email: {user.email}</p>
             <button onClick={() => router.push(`/users/${user.id}/edit`)}>Editar</button>
         </Box>

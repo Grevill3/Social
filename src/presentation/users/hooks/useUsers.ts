@@ -6,10 +6,10 @@ import { ListUsers } from '../../../domain/users/useCases/ListUsers';
 import { GetUser } from '../../../domain/users/useCases/GetUser';
 import { UpdateUser } from '../../../domain/users/useCases/UpdateUser';
 import { DeleteUser } from '../../../domain/users/useCases/DeleteUser';
-import { UserApiRepository } from '../../../infrastructure/users/repositories/UserApiRepository';
+import { LocalStorageUserRepository } from '../../../infrastructure/users/repositories/LocalStorageUserRepository'; // LocalStorage usado para teste, substituir pela API real quando houver
 import { User } from '../../../domain/users/entities/User';
 
-const repo = new UserApiRepository();
+const repo = new LocalStorageUserRepository(); // LocalStorage usado para teste, substituir pela API real quando houver
 const createUserUC = new CreateUser(repo);
 const listUsersUC = new ListUsers(repo);
 const getUserUC = new GetUser(repo);

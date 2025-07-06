@@ -3,8 +3,8 @@
 import { ReactNode, useState } from 'react';
 import { CssBaseline, ThemeProvider, Box } from '@mui/material';
 import theme from '../theme';
-import Header from '../components/Header';
-import Sidebar from '../components/Sidebar';
+import Header from '../presentation/common/components/Header';
+import Sidebar from '../presentation/common/components/Sidebar';
 import '../styles/globals.css';
 
 export default function RootLayout({ children }: { children: ReactNode }) {

@@ -1,13 +1,11 @@
-import { Typography, Box } from '@mui/material';
-import Link from 'next/link';
+import { Box } from '@mui/material';
 import UserEditClient from '../../../../presentation/users/clients/UserEditClient';
+import { PageTitle } from '../../../../presentation/common/components/PageTitle';
 
 export default function UserEditPage() {
     return (
         <Box>
-            <Typography variant="h4">Editar usuário</Typography>
-            <hr />
-            <Link href="/users">Voltar</Link>
+            <PageTitle text='Editar usuário' />
             <UserEditClient />
         </Box>
     );

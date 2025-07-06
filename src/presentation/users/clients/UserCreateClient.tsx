@@ -8,10 +8,10 @@ export default function UserCreateClient() {
     const { create } = useUsers();
     const router = useRouter();
 
-    async function handle(data: { name: string; email: string }) {
+    async function handle(data: { name: string; email: string; login: string }) {
         await create(data);
         router.push('/users');
     }
     
-    return <UserForm onSubmit={handle} submitLabel="Criar" />;
+    return <UserForm onSubmit={handle} submitLabel="Cadastrar" />;
 }

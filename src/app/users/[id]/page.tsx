@@ -1,13 +1,11 @@
-import { Typography, Box } from '@mui/material';
-import Link from 'next/link';
+import { Box } from '@mui/material';
 import UserDetailClient from '../../../presentation/users/clients/UserDetailClient';
+import { PageTitle } from '../../../presentation/common/components/PageTitle';
 
 export default function UserDetailPage() {
     return (
         <Box>
-            <Typography variant="h4">Detalhes do usuário</Typography>
-            <hr />
-            <Link href="/users">Voltar</Link>
+            <PageTitle text='Consultar usuário' />
             <UserDetailClient />
         </Box>
     );

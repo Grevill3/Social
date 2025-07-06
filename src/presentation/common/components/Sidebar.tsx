@@ -51,7 +51,7 @@ export default function Sidebar({ open }: SidebarProps) {
                     <ListItemIcon><HomeIcon /></ListItemIcon>
                     {open && <ListItemText primary="Início" />}
                 </ListItemButton>
-                <ListItemButton selected={pathname === '/users'} onClick={() => handleNavigate('/users')}>
+                <ListItemButton selected={pathname.startsWith('/users')} onClick={() => handleNavigate('/users')}>
                     <ListItemIcon><PeopleIcon /></ListItemIcon>
                     {open && <ListItemText primary="Usuários" />}
                 </ListItemButton>

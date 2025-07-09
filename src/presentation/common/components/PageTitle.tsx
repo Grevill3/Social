@@ -1,5 +1,3 @@
-'use client';
-
 import { Typography, Box } from '@mui/material';
 
 type TitleProps = {

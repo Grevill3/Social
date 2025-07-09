@@ -1,5 +1,3 @@
-'use client';
-
 import { AppBar, Toolbar, IconButton, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 

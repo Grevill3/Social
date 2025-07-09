@@ -20,8 +20,13 @@ export default function UserEditClient() {
 	if (!user) return <p>Carregando...</p>;
 
 	const handle = async (data: { name: string; email: string }) => {
-		await update(user.id, data);
-		router.push('/users');
+		try {
+            await update(user.id, data);
+			router.push('/users');
+        }
+		catch (err: any) {
+            console.log(err.message); // exibe snackbar, alert, etc. - TRATAR AQUI
+        }
 	};
 
 	return (

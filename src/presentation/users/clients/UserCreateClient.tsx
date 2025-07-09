@@ -9,9 +9,14 @@ export default function UserCreateClient() {
     const router = useRouter();
 
     async function handle(data: { name: string; email: string; login: string }) {
-        await create(data);
-        router.push('/users');
+        try {
+            await create(data);
+            router.push('/users');
+        }
+        catch (err: any) {
+            console.log(err.message); // exibe snackbar, alert, etc. - TRATAR AQUI
+        }
     }
-    
+
     return <UserForm onSubmit={handle} submitLabel="Cadastrar" />;
 }

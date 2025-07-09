@@ -30,7 +30,6 @@ export function UserForm({ onSubmit, submitLabel, initialValues }: Props) {
                         label="Nome"
                         value={name}
                         onChange={e => setName(e.target.value)}
-                        required
                         fullWidth
                     />
                 </Grid>
@@ -40,7 +39,6 @@ export function UserForm({ onSubmit, submitLabel, initialValues }: Props) {
                         type="email"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
-                        required
                         fullWidth
                     />
                 </Grid>
@@ -49,7 +47,6 @@ export function UserForm({ onSubmit, submitLabel, initialValues }: Props) {
                         label="Login"
                         value={login}
                         onChange={e => setLogin(e.target.value)}
-                        required
                         fullWidth
                     />
                 </Grid>

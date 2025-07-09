@@ -25,8 +25,15 @@ export function useUsers() {
     }
 
     async function create(data: Omit<User, 'id' | 'createdAt'>) {
-        await createUserUC.execute(data);
-        await fetchAll();
+        try {
+            // await createUserUC.execute(data);
+            // await fetchAll();
+            const user = await createUserUC.execute(data);
+            setUsers(prev => [...prev, user]);
+        }
+        catch (err: any) {
+            throw err; // erro será capturado pela UI
+        }
     }
 
     async function get(id: string): Promise<User | null> {
@@ -34,8 +41,13 @@ export function useUsers() {
     }
 
     async function update(id: string, data: Partial<Omit<User, 'id' | 'createdAt'>>) {
-        const updated = await updateUserUC.execute(id, data);
-        setUsers(prev => prev.map(u => (u.id === id ? updated : u)));
+        try {
+            const updated = await updateUserUC.execute(id, data);
+            setUsers(prev => prev.map(u => (u.id === id ? updated : u)));
+        }
+        catch (err: any) {
+            throw err;
+        }
     }
 
     async function remove(id: string) {
